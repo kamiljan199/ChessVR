@@ -9,7 +9,7 @@ public abstract class Piece : MonoBehaviour
     private MaterialSetter materialSetter;
     public Board board { protected get; set; }
     public Vector2Int occupiedSquare { get; set; }
-    public TeamColor color { get; set; }
+    public TeamColor team { get; set; }
     public bool hasMoved { get; private set; }
     public List<Vector2Int> availableMoves;
     private IObjectTweener tweener;
@@ -34,7 +34,7 @@ public abstract class Piece : MonoBehaviour
 
     public bool IsFromSameTeam(Piece piece)
     {
-        return color == piece.color;
+        return team == piece.team;
     }
 
     public bool CanMoveTo(Vector2Int coords)
@@ -55,9 +55,9 @@ public abstract class Piece : MonoBehaviour
         availableMoves.Add(coords);
     }
 
-    public void SetData(Vector2Int coords, TeamColor color, Board board)
+    public void SetData(Vector2Int coords, TeamColor team, Board board)
     {
-        this.color = color;
+        this.team = team;
         occupiedSquare = coords;
         this.board = board;
         transform.position = board.CalculatePositionFromCoords(coords);

@@ -13,7 +13,6 @@ public class Board : MonoBehaviour
     private Piece[,] grid;
     private Piece selectedPiece;
     private ChessGameController chessController;
-    private SquareSelectorCreator squareSelector;
 
     private void Awake()
     {
@@ -66,14 +65,14 @@ public class Board : MonoBehaviour
     private void SelectPiece(Piece piece)
     {
         selectedPiece = piece;
-        List<Vector2Int> selection = selectedPiece.avaliableMoves;
-        ShowSelectionSquares(selection);
+/*        List<Vector2Int> selection = selectedPiece.avaliableMoves;
+        ShowSelectionSquares(selection);*/
     }
 
     private void DeselectPiece()
     {
         selectedPiece = null;
-        squareSelector.ClearSelection();
+/*        squareSelector.ClearSelection();*/
     }
 
     private void OnSelectedPieceMoved(Vector2Int coords, Piece piece)
@@ -122,5 +121,11 @@ public class Board : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void SetPieceOnBoard(Vector2Int coords, Piece piece)
+    {
+        if (CheckIfCoordinatesAreOnBoard(coords))
+            grid[coords.x, coords.y] = piece;
     }
 }

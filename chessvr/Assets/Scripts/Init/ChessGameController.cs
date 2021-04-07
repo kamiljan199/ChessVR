@@ -29,7 +29,7 @@ public class ChessGameController : MonoBehaviour
     // Update is called once per frame
     private void StartNewGame()
     {
-        board.SetDependencies();
+        board.SetDependencies(this);
         CreatePiecesFromLayout(startingBoardLayout);
         activePlayer = whitePlayer;
         GenerateAllPossiblePlayerMoves(activePlayer);
@@ -38,8 +38,7 @@ public class ChessGameController : MonoBehaviour
     private void CreatePlayers()
     {
         whitePlayer = new ChessPlayer(TeamColor.White, board);
-        whitePlayer = new ChessPlayer(TeamColor.Black, board);
-
+        blackPlayer = new ChessPlayer(TeamColor.Black, board);
     }
 
     private void CreatePiecesFromLayout(BoardLayout layout)
@@ -47,21 +46,26 @@ public class ChessGameController : MonoBehaviour
         for (int i = 0; i < layout.GetPiecesCount(); i++)
         {
             Vector2Int squareCoords = layout.GetSquareCoordsAtIndex(i);
-            TeamColor teamColor = layout.GetSquareTeamColorAtIndex(i);
+            TeamColor team = layout.GetSquareTeamColorAtIndex(i);
             string typeName = layout.GetSquarePieceNameAtIndex(i);
-            Type type = Type.GetType(typeName);
 
-            CreatePieceAndInit(squareCoords, teamColor, type);
+            Type type = Type.GetType(typeName);
+            CreatePieceAndInitialize(squareCoords, team, type);
         }
     }
 
-    private void CreatePieceAndInit(Vector2Int squareCoords, TeamColor teamColor, Type type)
+    private void CreatePieceAndInitialize(Vector2Int squareCoords, TeamColor team, Type type)
     {
         Piece newPiece = pieceCreator.CreatePiece(type).GetComponent<Piece>();
-        newPiece.SetData(squareCoords, teamColor, board);
+        newPiece.SetData(squareCoords, team, board);
 
-        Material teamMaterial = pieceCreator.GetTeamMaterial(teamColor);
+        Material teamMaterial = pieceCreator.GetTeamMaterial(team);
         newPiece.SetMaterial(teamMaterial);
+
+        board.SetPieceOnBoard(squareCoords, newPiece);
+
+        ChessPlayer currentPlayer = team == TeamColor.White ? whitePlayer : blackPlayer;
+        currentPlayer.AddPiece(newPiece);
     }
 
     private void GenerateAllPossiblePlayerMoves(ChessPlayer player)
