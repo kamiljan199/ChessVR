@@ -56,21 +56,26 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Pieces\Knight.cs" />
-    <Compile Include="Assets\Scripts\Pieces\Pawn.cs" />
-    <Compile Include="Assets\Scripts\Pieces\Bishop.cs" />
-    <Compile Include="Assets\Scripts\Pieces\King.cs" />
-    <Compile Include="Assets\Scripts\Pieces\Queen.cs" />
-    <Compile Include="Assets\Scripts\Pieces\Rook.cs" />
-    <Compile Include="Assets\Scripts\Enums\PieceType.cs" />
-    <Compile Include="Assets\Scripts\Enums\TeamColor.cs" />
-    <Compile Include="Assets\Scripts\BoardLayout.cs" />
-    <Compile Include="Assets\Scripts\Init\ChessGameController.cs" />
     <Compile Include="Assets\Scripts\Pieces\Piece.cs" />
-    <Compile Include="Assets\Scripts\Init\PieceCreator.cs" />
-    <Compile Include="Assets\Scripts\Board.cs" />
-    <Compile Include="Assets\Scripts\MaterialSetter.cs" />
+    <Compile Include="Assets\Scripts\Pieces\King.cs" />
     <Compile Include="Assets\Scripts\IObjectTweener.cs" />
+    <Compile Include="Assets\Scripts\Enums\PieceType.cs" />
+    <Compile Include="Assets\Scripts\Pieces\Bishop.cs" />
+    <Compile Include="Assets\Scripts\Init\PieceCreator.cs" />
+    <Compile Include="Assets\Scripts\Pieces\Pawn.cs" />
+    <Compile Include="Assets\Scripts\Init\ChessGameController.cs" />
+    <Compile Include="Assets\Scripts\Pieces\Rook.cs" />
+    <Compile Include="Assets\Scripts\BoardLayout.cs" />
+    <Compile Include="Assets\Scripts\MaterialSetter.cs" />
+    <Compile Include="Assets\Scripts\Enums\TeamColor.cs" />
+    <Compile Include="Assets\Scripts\Pieces\Knight.cs" />
+    <Compile Include="Assets\Scripts\Pieces\Queen.cs" />
+    <Compile Include="Assets\Scripts\Board.cs" />
+    <Compile Include="Assets\Scripts\ChessPlayer.cs" />
+    <Compile Include="Assets\Scripts\Input\InputReceiver.cs" />
+    <Compile Include="Assets\Scripts\Input\IInputHandler.cs" />
+    <Compile Include="Assets\Scripts\Input\ColliderInputReceiver.cs" />
+    <Compile Include="Assets\Scripts\Input\BoardInputHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

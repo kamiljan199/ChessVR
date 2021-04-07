@@ -11,9 +11,14 @@ public class ChessGameController : MonoBehaviour
 
     private PieceCreator pieceCreator;
 
+    private ChessPlayer whitePlayer;
+    private ChessPlayer blackPlayer;
+    private ChessPlayer activePlayer;
+
     private void Awake()
     {
         pieceCreator = GetComponent<PieceCreator>();
+        CreatePlayers();
     }
 
     void Start()
@@ -25,6 +30,15 @@ public class ChessGameController : MonoBehaviour
     private void StartNewGame()
     {
         CreatePiecesFromLayout(startingBoardLayout);
+        activePlayer = whitePlayer;
+        GenerateAllPossiblePlayerMoves(activePlayer);
+    }
+
+    private void CreatePlayers()
+    {
+        whitePlayer = new ChessPlayer(TeamColor.White, board);
+        whitePlayer = new ChessPlayer(TeamColor.Black, board);
+
     }
 
     private void CreatePiecesFromLayout(BoardLayout layout)
@@ -47,5 +61,10 @@ public class ChessGameController : MonoBehaviour
 
         Material teamMaterial = pieceCreator.GetTeamMaterial(teamColor);
         newPiece.SetMaterial(teamMaterial);
+    }
+
+    private void GenerateAllPossiblePlayerMoves(ChessPlayer player)
+    {
+        player.GenerateAllPossibleMoves();
     }
 }
