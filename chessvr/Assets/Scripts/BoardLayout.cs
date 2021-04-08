@@ -24,12 +24,7 @@ public class BoardLayout : ScriptableObject
 
     public Vector2Int GetSquareCoordsAtIndex(int index)
     {
-        if(boardSquares.Length <= index)
-        {
-            Debug.LogError("Wrong index");
-            return new Vector2Int(-1, -1);
-        }
-        return new Vector2Int(boardSquares[index].position.x, boardSquares[index].position.y);
+        return new Vector2Int(boardSquares[index].position.x - 1, boardSquares[index].position.y - 1);
     }
 
     public string GetSquarePieceNameAtIndex(int index)

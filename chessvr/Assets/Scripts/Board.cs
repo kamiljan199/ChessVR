@@ -16,7 +16,7 @@ public class Board : MonoBehaviour
 
     private void Awake()
     {
-        grid = new Piece[BOARD_SIZE, BOARD_SIZE];
+        //grid = new Piece[BOARD_SIZE, BOARD_SIZE];
         CreateGrid();
     }
 
@@ -32,13 +32,13 @@ public class Board : MonoBehaviour
 
     public Vector3 CalculatePositionFromCoords(Vector2Int coords)
     {
-        return bottomLeftSquareTransform.position + new Vector3((coords.x - 1)* squareSize, 0f, (coords.y - 1) * squareSize);
+        return bottomLeftSquareTransform.position + new Vector3(coords.x * squareSize, 0f, coords.y * squareSize);
     }
 
     private Vector2Int CalculateCoordsFromPosition(Vector3 inputPosition)
     {
-        int x = Mathf.FloorToInt(transform.InverseTransformPoint(inputPosition).x / squareSize) + BOARD_SIZE / 2;
-        int y = Mathf.FloorToInt(transform.InverseTransformPoint(inputPosition).z / squareSize) + BOARD_SIZE / 2;
+        int x = Mathf.FloorToInt(inputPosition.x / squareSize) + BOARD_SIZE / 2;
+        int y = Mathf.FloorToInt(inputPosition.z / squareSize) + BOARD_SIZE / 2;
         return new Vector2Int(x, y);
     }
 
