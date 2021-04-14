@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Board : MonoBehaviour
 {
-    private const int BOARD_SIZE = 8;
+    public const int BOARD_SIZE = 8;
 
     [SerializeField] private Transform bottomLeftSquareTransform;
     [SerializeField] private float squareSize;
