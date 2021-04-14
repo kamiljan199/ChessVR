@@ -24,7 +24,7 @@ public class Knight : Piece
             Piece piece = board.GetPieceOnSquare(nextCoordinates);
             if (!board.CheckIfCoordinatesAreOnBoard(nextCoordinates))
                 continue;
-            if (piece == null || (!piece.IsFromSameTeam(this))
+            if (piece == null || !piece.IsFromSameTeam(this))
                 TryToAddMove(nextCoordinates);
         }
         return availableMoves;

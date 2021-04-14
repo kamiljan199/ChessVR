@@ -10,7 +10,7 @@ public class Rook : Piece
         float range = Board.BOARD_SIZE;
         foreach (var direction in directions)
         {
-            for (int i = 1; i < range; i++)
+            for (int i = 1; i <= range; i++)
             {
                 Vector2Int nextCoordinates = occupiedSquare + direction * i;
                 Piece piece = board.GetPieceOnSquare(nextCoordinates);
