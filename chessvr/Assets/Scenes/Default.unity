@@ -468,7 +468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freeSquareMaterial: {fileID: 2100000, guid: 4d8483a78080097468b8e7935e5559e0, type: 2}
   enemySquareMaterial: {fileID: 2100000, guid: fbdb8c1dc1502f043be956540c79847a, type: 2}
-  selectorPrefab: {fileID: 0}
+  selectorPrefab: {fileID: 1926245967507556226, guid: 6c70f6876377edc428b19bb9cf40531d, type: 3}
 --- !u!114 &994329526
 MonoBehaviour:
   m_ObjectHideFlags: 0
