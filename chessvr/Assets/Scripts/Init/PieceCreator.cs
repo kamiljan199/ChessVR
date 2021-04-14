@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,7 +21,7 @@ public class PieceCreator : MonoBehaviour
     public GameObject CreatePiece(Type type)
     {
         GameObject prefab = nameToPieceDict[type.ToString()];
-        if(prefab)
+        if (prefab)
         {
             GameObject newPiece = Instantiate(prefab);
             return newPiece;

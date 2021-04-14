@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Board : MonoBehaviour
@@ -65,14 +62,14 @@ public class Board : MonoBehaviour
     private void SelectPiece(Piece piece)
     {
         selectedPiece = piece;
-/*        List<Vector2Int> selection = selectedPiece.avaliableMoves;
-        ShowSelectionSquares(selection);*/
+        /*        List<Vector2Int> selection = selectedPiece.avaliableMoves;
+                ShowSelectionSquares(selection);*/
     }
 
     private void DeselectPiece()
     {
         selectedPiece = null;
-/*        squareSelector.ClearSelection();*/
+        /*        squareSelector.ClearSelection();*/
     }
 
     private void OnSelectedPieceMoved(Vector2Int coords, Piece piece)
@@ -114,7 +111,7 @@ public class Board : MonoBehaviour
         {
             for (int j = 0; j < BOARD_SIZE; j++)
             {
-                if (grid[i,j] == piece)
+                if (grid[i, j] == piece)
                 {
                     return true;
                 }

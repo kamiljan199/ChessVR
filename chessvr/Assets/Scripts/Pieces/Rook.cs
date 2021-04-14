@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,9 +8,9 @@ public class Rook : Piece
     {
         availableMoves.Clear();
         float range = Board.BOARD_SIZE;
-        foreach(var direction in directions)
+        foreach (var direction in directions)
         {
-            for(int i = 1; i < range; i++)
+            for (int i = 1; i < range; i++)
             {
                 Vector2Int nextCoordinates = occupiedSquare + direction * i;
                 Piece piece = board.GetPieceOnSquare(nextCoordinates);
@@ -29,16 +28,5 @@ public class Rook : Piece
             }
         }
         return availableMoves;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

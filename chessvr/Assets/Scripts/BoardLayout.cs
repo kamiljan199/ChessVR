@@ -1,9 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName ="Scriptable Object/board/Layout")]
+[CreateAssetMenu(menuName = "Scriptable Object/board/Layout")]
 public class BoardLayout : ScriptableObject
 {
 
