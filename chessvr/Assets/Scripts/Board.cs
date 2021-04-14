@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(SquareSelectorCreator))]
 public class Board : MonoBehaviour
 {
     public const int BOARD_SIZE = 8;
@@ -10,10 +11,12 @@ public class Board : MonoBehaviour
     private Piece[,] grid;
     private Piece selectedPiece;
     private ChessGameController chessController;
+    private SquareSelectorCreator squareSelector;
 
     private void Awake()
     {
         //grid = new Piece[BOARD_SIZE, BOARD_SIZE];
+        squareSelector = GetComponent<SquareSelectorCreator>();
         CreateGrid();
     }
 
