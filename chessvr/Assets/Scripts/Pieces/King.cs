@@ -11,16 +11,16 @@ public class King : Piece
         new Vector2Int(-1, 0),
         new Vector2Int(1, 0),
         new Vector2Int(-1, -1),
-        new Vector2Int(0, 1),
+        new Vector2Int(0, -1),
         new Vector2Int(1, -1),
     };
     public override List<Vector2Int> SelectAvailableSquares()
     {
         availableMoves.Clear();
-        float range = Board.BOARD_SIZE;
+        float range = 1;
         foreach (var direction in directions)
         {
-            for (int i = 1; i < range; i++)
+            for (int i = 1; i <= range; i++)
             {
                 Vector2Int nextCoordinates = occupiedSquare + direction * i;
                 Piece piece = board.GetPieceOnSquare(nextCoordinates);

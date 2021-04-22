@@ -9,10 +9,6 @@ public class Bishop : Piece
         new Vector2Int(1, -1),
         new Vector2Int(-1, 1),
         new Vector2Int(-1, -1),
-        Vector2Int.up,
-        Vector2Int.down,
-        Vector2Int.right,
-        Vector2Int.left
     };
     public override List<Vector2Int> SelectAvailableSquares()
     {
@@ -20,7 +16,7 @@ public class Bishop : Piece
         float range = Board.BOARD_SIZE;
         foreach (var direction in directions)
         {
-            for (int i = 1; i < range; i++)
+            for (int i = 1; i <= range; i++)
             {
                 Vector2Int nextCoordinates = occupiedSquare + direction * i;
                 Piece piece = board.GetPieceOnSquare(nextCoordinates);
