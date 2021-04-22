@@ -1,17 +1,22 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(IObjectTweener))]
 [RequireComponent(typeof(MaterialSetter))]
 public abstract class Piece : MonoBehaviour
 {
-    private MaterialSetter materialSetter;
+    [SerializeField] private MaterialSetter materialSetter;
     public Board board { protected get; set; }
     public Vector2Int occupiedSquare { get; set; }
     public TeamColor team { get; set; }
     public bool hasMoved { get; private set; }
     public List<Vector2Int> availableMoves;
+
     private IObjectTweener tweener;
+
     public abstract List<Vector2Int> SelectAvailableSquares();
 
     private void Awake()
@@ -61,4 +66,34 @@ public abstract class Piece : MonoBehaviour
         this.board = board;
         transform.position = board.CalculatePositionFromCoords(coords);
     }
+
+    protected Piece GetPieceInDirection<T>(TeamColor team, Vector2Int direction) where T : Piece
+    {
+        for (int i = 1; i <= Board.BOARD_SIZE; i++)
+        {
+            Vector2Int nextCoords = occupiedSquare + direction * i;
+            Piece piece = board.GetPieceOnSquare(nextCoords);
+            if (!board.CheckIfCoordinatesAreOnBoard(nextCoords))
+                return null;
+            if(piece != null)
+            {
+                if (piece.team != team || !(piece is T))
+                    return null;
+                else if (piece.team == team || piece is T)
+                    return piece;
+            }
+        }
+        return null;
+    }    
+
+    public bool IsAttackingPieceOfType<T>() where T : Piece
+    {
+        foreach (var square in availableMoves)
+        {
+            if (board.GetPieceOnSquare(square) is T)
+                return true;
+        }
+        return false;
+    }
+
 }

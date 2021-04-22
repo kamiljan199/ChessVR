@@ -21,16 +21,34 @@ sysinfo.txt
 .vs/
 /*.userprefs
 /*.csproj
+*.csproj
 /*.pidb
 *.pidb.meta
 /*.suo
 /*.sln*
+*.sln*
+/*.sln
+*.sln
 /*.user
 /*.unityproj
 /*.booproj
 .consulo/
 /*.tmp
 /*.svd
+
+chessvr/*.userprefs
+chessvr/*.csproj
+chessvr/*.pidb
+chessvr/*.pidb.meta
+chessvr/*.suo
+chessvr/*.sln*
+chessvr/*.sln
+chessvr/*.user
+chessvr/*.unityproj
+chessvr/*.booproj
+chessvr/.consulo/
+chessvr/*.tmp
+chessvr/*.svd
  
 # ============ #
 # OS generated #
