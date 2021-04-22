@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6438220}
   - component: {fileID: 139354423121027785}
   - component: {fileID: 4265201763734813583}
-  - component: {fileID: 6227672000918132902}
+  - component: {fileID: -7306542074990779521}
   m_Layer: 0
   m_Name: King
   m_TagString: King
@@ -124,8 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36d31098518ed47438ad20e105827ce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  materialSetter: {fileID: 0}
   availableMoves: []
---- !u!114 &6227672000918132902
+--- !u!114 &-7306542074990779521
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,9 +135,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 119820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af7b64916455c774da31143ab6ba39e6, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b9c0dafc12b9094097214d499b22920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSpeed: 4
 --- !u!1 &4975729975612627760
 GameObject:
   m_ObjectHideFlags: 0

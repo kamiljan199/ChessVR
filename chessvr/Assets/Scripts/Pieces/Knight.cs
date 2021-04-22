@@ -18,7 +18,7 @@ public class Knight : Piece
     {
         availableMoves.Clear();
 
-        for (int i = 1; i < offsets.Length; i++)
+        for (int i = 0; i < offsets.Length; i++)
         {
             Vector2Int nextCoordinates = occupiedSquare + offsets[i];
             Piece piece = board.GetPieceOnSquare(nextCoordinates);

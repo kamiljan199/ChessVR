@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(PieceCreator))]
 public class ChessGameController : MonoBehaviour
@@ -35,6 +36,8 @@ public class ChessGameController : MonoBehaviour
     void Start()
     {
         StartNewGame();
+        cameraSwitch.CreateCameras();
+
     }
 
     // Update is called once per frame
@@ -46,7 +49,6 @@ public class ChessGameController : MonoBehaviour
         CreatePiecesFromLayout(startingBoardLayout);
         activePlayer = whitePlayer;
         GenerateAllPossiblePlayerMoves(activePlayer);
-        cameraSwitch.CreateCameras();
         SetGameState(GameState.Play);
     }
 
@@ -140,12 +142,12 @@ public class ChessGameController : MonoBehaviour
 
     public void RestartGame()
     {
-        Application.LoadLevel(Application.loadedLevel);
-        DestroyPieces();
-        board.OnGameRestarted();
-        whitePlayer.OnGameRestarted();
-        blackPlayer.OnGameRestarted();
-        StartNewGame();
+        SceneManager.LoadScene(0);
+        //DestroyPieces();
+        //board.OnGameRestarted();
+        //whitePlayer.OnGameRestarted();
+        //blackPlayer.OnGameRestarted();
+        //StartNewGame();
     }
 
     private void DestroyPieces()

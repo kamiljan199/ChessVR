@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6484090}
   - component: {fileID: 56337227776428568}
   - component: {fileID: 7911004140672767281}
-  - component: {fileID: 8190000013983319628}
+  - component: {fileID: 6156424031772424648}
   m_Layer: 0
   m_Name: Bishop
   m_TagString: Untagged
@@ -123,8 +123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a86229c5c5f1ddc4ebf4e3d06adac0d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  materialSetter: {fileID: 0}
   availableMoves: []
---- !u!114 &8190000013983319628
+--- !u!114 &6156424031772424648
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,6 +134,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 190264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af7b64916455c774da31143ab6ba39e6, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b9c0dafc12b9094097214d499b22920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSpeed: 4
