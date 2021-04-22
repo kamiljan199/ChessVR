@@ -8,6 +8,8 @@ public class ChessGameController : MonoBehaviour
     [SerializeField] private Board board;
 
     private PieceCreator pieceCreator;
+    private CameraSwitch cameraSwitch;
+
 
     private ChessPlayer whitePlayer;
     private ChessPlayer blackPlayer;
@@ -16,12 +18,14 @@ public class ChessGameController : MonoBehaviour
     private void Awake()
     {
         pieceCreator = GetComponent<PieceCreator>();
+        cameraSwitch = GetComponent<CameraSwitch>();
         CreatePlayers();
     }
 
     void Start()
     {
         StartNewGame();
+        cameraSwitch.CreateCameras();
     }
 
     // Update is called once per frame

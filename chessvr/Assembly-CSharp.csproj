@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\SquareSelectorCreator.cs" />
     <Compile Include="Assets\Scripts\Pieces\Queen.cs" />
     <Compile Include="Assets\Scripts\Board.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraSwitch.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
